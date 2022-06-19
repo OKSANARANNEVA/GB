@@ -2,8 +2,6 @@
 -- catalogs и products в таблицу logs помещается время и дата создания записи, название таблицы,
 -- идентификатор первичного ключа и содержимое поля name.
 
--- !!! Archive - не поддерживает индексы, поэтому при определении
--- таблицы первичный ключ не указывается. !!!
 
 DROP TABLE IF EXISTS logs;
 CREATE TABLE logs (
@@ -69,41 +67,9 @@ SELECT * FROM users;
 SELECT * FROM logs;
 
 
--- **********  Tests for catalogs  **********
-SELECT * FROM catalogs;
-SELECT * FROM logs;
 
-INSERT INTO catalogs (name)
-VALUES ('Оперативная память'),
-		('Куллера'),
-		('Аксессуары');
+-- 2. Создайте SQL-запрос, который помещает в таблицу users миллион записей.
 
-SELECT * FROM catalogs;
-SELECT * FROM logs;
-
-
--- **********  Tests for products  **********
-SELECT * FROM products;
-SELECT * FROM logs;
-
-INSERT INTO products (name, description, price, catalog_id)
-VALUES ('PATRIOT PSD34G13332', 'Оперативная память', 3000.00, 13),
-		('DARK ROCK PRO 4 (BK022)', 'Куллера', 500.00, 14),
-		('Коврик', 'Коврик для мыши', 150.00, 15);
-
-SELECT * FROM products;
-SELECT * FROM logs;
-
-
-
-
--- ********************************************************************************************
--- ************************************  ex 02  ***********************************************
--- 2. (по желанию) Создайте SQL-запрос, который помещает в таблицу users миллион записей.
-
--- Никому не советую пробобовать добавить 1 млн. users, так как это займет очень много времени !!!
-
--- Для текущего задания создам тестовую таблицу test_users
 
 DROP TABLE IF EXISTS test_users; 
 CREATE TABLE test_users (
